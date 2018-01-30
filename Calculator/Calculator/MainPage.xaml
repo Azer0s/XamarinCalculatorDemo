@@ -4,8 +4,82 @@
              xmlns:local="clr-namespace:Calculator"
              x:Class="Calculator.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <Grid Padding="3,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="resultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Black" Text="0"
+              TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+              LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+
+        <Button Text="7" Grid.Row="1" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+        <Button Text="8" Grid.Row="1" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+        <Button Text="9" Grid.Row="1" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+
+        <Button Text="4" Grid.Row="2" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+        <Button Text="5" Grid.Row="2" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+        <Button Text="6" Grid.Row="2" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+
+        <Button Text="1" Grid.Row="3" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+        <Button Text="2" Grid.Row="3" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+        <Button Text="3" Grid.Row="3" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+        <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="NumberButtonPressed"/>
+
+        <Button Text="÷" Grid.Row="1" Grid.Column="3"
+                BackgroundColor="{x:Static local:Resources.OperationButtonColor}" TextColor="White"
+                FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="AddOperator"/>
+        <Button Text="×" Grid.Row="2" Grid.Column="3"
+                BackgroundColor="{x:Static local:Resources.OperationButtonColor}" TextColor="White"
+                FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="AddOperator"/>
+        <Button Text="-" Grid.Row="3" Grid.Column="3"
+                BackgroundColor="{x:Static local:Resources.OperationButtonColor}" TextColor="White"
+                FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="AddOperator"/>
+        <Button Text="+" Grid.Row="4" Grid.Column="3"
+                BackgroundColor="{x:Static local:Resources.OperationButtonColor}" TextColor="White"
+                FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="AddOperator"/>
+
+        <Button Text="C" Grid.Row="5" Grid.Column="0"
+                BackgroundColor="#808080" TextColor="White"
+                FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="Reset"/>
+
+        <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                BackgroundColor="{x:Static local:Resources.OperationButtonColor}" TextColor="White"
+                FontSize="{x:Static local:Resources.ButtonTextSize}" BorderRadius="0" Pressed="Calculate"/>
+
+    </Grid>
 
 </ContentPage>

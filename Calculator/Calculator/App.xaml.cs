@@ -13,7 +13,7 @@ namespace Calculator
 		{
 			InitializeComponent();
 
-			MainPage = new Calculator.MainPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
