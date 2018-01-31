@@ -39,7 +39,7 @@ namespace Calculator
 	        resultText.Text = "0";
 	    }
 
-	    public void Calculate(object sender, EventArgs e)
+	    public async void Calculate(object sender, EventArgs e)
 	    {
 	        calculation.Add(resultText.Text);
 	        resultText.Text = await Task.Run(()=>Calculator.Calculate(calculation));
