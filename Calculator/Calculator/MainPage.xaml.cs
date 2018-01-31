@@ -42,7 +42,7 @@ namespace Calculator
 	    public void Calculate(object sender, EventArgs e)
 	    {
 	        calculation.Add(resultText.Text);
-	        resultText.Text = Calculator.Calculate(calculation);
+	        resultText.Text = await Task.Run(()=>Calculator.Calculate(calculation));
 	        calculation = new List<string>();
 	    }
     }
